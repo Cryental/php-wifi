@@ -47,11 +47,13 @@ class Collection extends BaseCollection
     }
 
     /**
-     * @throws \Sanchescom\WiFi\Exceptions\NetworkNotFoundException
+     * @param null $key
+     * @param null $operator
+     * @param null $value * @return \Sanchescom\WiFi\System\AbstractNetwork
+     *@throws \Sanchescom\WiFi\Exceptions\NetworkNotFoundException
      *
-     * @return \Sanchescom\WiFi\System\AbstractNetwork
      */
-    public function firstOrFail()
+    public function firstOrFail($key = null, $operator = null, $value = null)
     {
         if ($this->isEmpty()) {
             throw new NetworkNotFoundException();
